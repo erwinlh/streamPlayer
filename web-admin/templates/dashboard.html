@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+  <button onclick="toggleTheme()">🌗 Alternar Tema</button>
   <h2>Video Streamer Dashboard</h2>
   <p>URL actual: {{ current_url }}</p>
 
   <form method="post" action="/update">
-    <label>Nueva URL:</label>
+    <label>Nueva URL:</label><br>
     <input type="text" name="new_url" placeholder="https://...">
-    <input type="submit" value="Actualizar y Reproducir">
+    <input type="submit" value="Actualizar y Reproducir" class="button-update">
   </form>
 
   <form method="post" action="/stop">
-    <input type="submit" value="Detener Streaming">
+    <input type="submit" value="Detener Streaming" class="button-stop">
   </form>
 
   <h3>Vista previa HDMI</h3>
@@ -28,6 +30,17 @@
       const img = document.getElementById('preview');
       img.src = '/preview.jpg?' + new Date().getTime();
     }, 3000);
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    };
   </script>
 </body>
 </html>

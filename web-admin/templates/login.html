@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   <title>Login</title>
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+  <button onclick="toggleTheme()">🌗 Alternar Tema</button>
   <h2>Iniciar sesión</h2>
   <form method="post">
     <label>Usuario:</label><br>
     <input type="text" name="username"><br>
     <label>Contraseña:</label><br>
     <input type="password" name="password"><br><br>
-    <input type="submit" value="Ingresar">
+    <input type="submit" value="Ingresar" class="button-update">
   </form>
   {% if error %}
     <p style="color:red">{{ error }}</p>
   {% endif %}
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    };
+  </script>
 </body>
 </html>

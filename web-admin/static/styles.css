@@ -1,0 +1,79 @@
+
+:root {
+  --latte-bg: #eff1f5;
+  --latte-fg: #4c4f69;
+  --latte-accent: #dc8a78;
+  --latte-red: #d20f39;
+  --latte-green: #40a02b;
+  --latte-blue: #1e66f5;
+
+  --frappe-bg: #303446;
+  --frappe-fg: #c6d0f5;
+  --frappe-accent: #f2d5cf;
+  --frappe-red: #e78284;
+  --frappe-green: #a6d189;
+  --frappe-blue: #8caaee;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--latte-bg);
+  color: var(--latte-fg);
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: var(--frappe-bg);
+  color: var(--frappe-fg);
+}
+
+input[type="text"], input[type="password"], input[type="submit"], button {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 6px;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.button-start {
+  background-color: var(--latte-green);
+  color: white;
+}
+
+.button-stop {
+  background-color: var(--latte-red);
+  color: white;
+}
+
+.button-update {
+  background-color: var(--latte-blue);
+  color: white;
+}
+
+.dark-mode .button-start {
+  background-color: var(--frappe-green);
+  color: black;
+}
+
+.dark-mode .button-stop {
+  background-color: var(--frappe-red);
+  color: black;
+}
+
+.dark-mode .button-update {
+  background-color: var(--frappe-blue);
+  color: black;
+}
+
+img {
+  margin-top: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  max-width: 100%;
+}
