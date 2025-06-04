@@ -8,6 +8,16 @@
   <h2>Video Streamer Dashboard</h2>
   <p>URL actual: {{ current_url }}</p>
 
+  <form method="post" action="/update">
+    <label>Nueva URL:</label>
+    <input type="text" name="new_url" placeholder="https://...">
+    <input type="submit" value="Actualizar y Reproducir">
+  </form>
+
+  <form method="post" action="/stop">
+    <input type="submit" value="Detener Streaming">
+  </form>
+
   <h3>Vista previa HDMI</h3>
   <div>
     <img src="/preview.jpg" id="preview" width="640" />
