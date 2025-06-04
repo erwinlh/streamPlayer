@@ -1,0 +1,11 @@
+[Unit]
+Description=Captura de vista previa HDMI
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/ubuntu/video-streamer/streamer/capture_preview.sh
+Restart=always
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target

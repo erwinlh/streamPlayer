@@ -1,0 +1,11 @@
+[Unit]
+Description=Video Streamer Service
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/ubuntu/video-streamer/streamer/start_stream.sh
+Restart=always
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
